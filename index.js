@@ -38,7 +38,7 @@ async function run() {
           .limit(size)
           .toArray();
       } else {
-        products = await cursor.toArray();
+        products = await cursor.limit(10).toArray();
       }
       res.send(products);
     });
